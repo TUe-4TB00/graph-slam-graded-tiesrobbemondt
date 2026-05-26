@@ -8,7 +8,6 @@ ODOMETRY_NOISE = gtsam.noiseModel.Diagonal.Sigmas(np.array([0.2, 0.2, 0.1]))  # 
 MEASUREMENT_NOISE = gtsam.noiseModel.Diagonal.Sigmas(np.array([0.05, 0.1]))  # (bearing, range)
 
 def add_landmark_measurement(graph, initial_estimate, result):
-    # CHANGED: Pull X(4) from initial_estimate, because it hasn't been optimized into 'result' yet
     pose4 = initial_estimate.atPose2(X(4))
     
     # L(2) was observed in the past, so it already exists in 'result' (this line is fine)
