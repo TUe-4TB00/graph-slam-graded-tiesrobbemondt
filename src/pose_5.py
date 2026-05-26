@@ -2,6 +2,7 @@ import numpy as np
 from helperfunctions import add_pose_from_global, add_landmark_measurement_from_global
 import gtsam
 from gtsam.symbol_shorthand import L, X
+#
 
 PRIOR_NOISE = gtsam.noiseModel.Diagonal.Sigmas(np.array([0.1, 0.1, 0.05]))  # (x, y, theta)
 ODOMETRY_NOISE = gtsam.noiseModel.Diagonal.Sigmas(np.array([0.2, 0.2, 0.1]))  # (dx, dy, dtheta)
